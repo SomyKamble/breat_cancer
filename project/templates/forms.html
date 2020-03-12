@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+
+    <form action="predict" method="post">
+        {% csrf_token %}
+        {% for i in dataset_cols %}
+    <th><th>{{i}}</th><td><input type="text" name="{{i}}"></td></tr>
+
+{% endfor %}
+
+</table>
+<center><button type="submit"><h1>check</button></h1></center>
+</form>
+
+</body>
+</html>
