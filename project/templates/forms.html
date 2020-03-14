@@ -2,14 +2,24 @@
 <html lang="en">
 {% load static %}
 <head>
+    {% if g %}
+          <script>alert('{{g}}');</script>
+    {% endif %}
+
+
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
 
+</head>
+{% if g %}
+          <h1>please input valid entry </h1>
+<button  type="button" onclick="location.href= '{% url 'home' %}' "><b>Click here to go back at home page </b></button>
+    {% endif %}
 
 <body style="background-image: url('{% static '/img/img_girl.jpg'%}');" >
 
 <center>
+    {% if e == 1 %}
 <h1>made by : Fatema,Akanksha,Ishika</h1></center>
 <label>{{static}}</label>
 <table>
@@ -21,9 +31,16 @@
 
 {% endfor %}
 
+
+
+
 </table>
 <center><button type="submit"><h1>check</button></h1></center>
 </form>
 
+
+
+
+{% endif %}
 </body>
 </html>
